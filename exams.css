@@ -1,0 +1,85 @@
+/*
+Author: Anif Shikder
+
+DESCRIPTION AND CONTENTS
+
+courses.php: User types a course name (or substrings of) into the form and clicks the "search" button.
+myexams.js: JavaScript code intercepts the click event, and initiates an Ajax request to look up the course id, course name, section and instructor for the entered name.
+exams.php: Looks up the courses(s) that match the possibly incomplete passed name and outputs the course id, course name, section and instructor as a JSON array.
+myexams.js: Renders the JSON result as an HTML select menu, captures the user-choice from the select menu, and invokes search.php, now including the course id.
+search.php: Shows the exmas timetable results for the course of the provided ID, including everything listed in the sample image at the top of this page.
+top.html: html for the top portion of the page.
+bottom.html: html for the bottom poriton of the page
+config.php: Holds info regarding database.
+
+FILE DESCRIPTION
+
+exams.css: Provides style sheet for every page.
+*/
+/*mainly background and some sizing of the middle box*/
+body {
+	padding-top: 5px;
+	padding-right: 20px;
+	padding-left: 20px;
+	padding-bottom: 55px;
+	background-color: lightgrey;
+	background-image: url(/Applications/MAMP/htdocs/A4/aaa.jpg) no-repeat;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-attachment: fixed;
+}
+/* the heading or the title of the site*/
+h2 {
+	color: #937246;
+	font-size: 40px;
+}
+/*button for adding to calendar*/
+#calendarbutton {
+	background-color: #c4876d;
+	border-color: #c4876d;
+	margin: 5px;
+}
+/*same text clolur scheme*/
+#displayTable, #calendarbutton, #searchExams {
+	color:#937246;
+}
+/*different colour scheme for some words in the site title*/
+.spantitle{
+	color: #c4876d;
+}
+/*common borderstyle, background color, and sizing*/
+#frame, #displayTable, #searchExams {
+	border-style: solid;
+	background-color: #DFB980;
+	margin-left:auto; 
+    margin-right:auto;
+    border-color: #c4876d;
+}
+/*common border size and margin*/
+#displayTable, #searchExams {
+	border-width: 1px;
+	margin-top: 35px;
+}
+/*the entire square thing with table and search sections*/
+#frame {
+	margin-top: 95px;
+	border-width: 10px;
+	text-align: center;
+	padding: 45px;
+    padding-top: 10px;
+    width: 65%;
+}
+/*display table*/
+#displayTable {
+	border-collapse: collapse;
+	width: 100%;
+}
+/*make changes for evey nth odd row*/
+tr:nth-child(odd) {
+	background-color: #D1A376;
+}
+/*the box around the search section*/
+#searchExams {
+	width: 50%;
+}
